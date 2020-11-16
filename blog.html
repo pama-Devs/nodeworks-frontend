@@ -51,7 +51,7 @@
           <!-- Links -->
           <ul class="navbar-nav ml-auto">
             <li class="mx-2"><a href="index.html">Home</a></li>
-            <li class="mx-2"><a data-toggle="modal" data-target="#myModal" href="#contact">Contact</a></li>
+            <li class="mx-2"><a data-toggle="modal" data-target="#modalRegisterForm" href="#contact">Contact</a></li>
             <li class="mx-2"><a href="fantom.html" class="get-started-btn scrollto">Fantom</a></li>
           </ul>
         </div>
@@ -59,55 +59,44 @@
     </div>
   </header>
 
-  <div class="container">
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-        <section id="contact" class="contact">
-          <div class="container" data-aos="fade-up">
-    
-            <!--<div class="section-title" style="padding: 100px 0;">
-              <h2 style="color: black;opacity: 1;background:white;">Contact</h2>
-            </div>-->
-    
-            <div class="row">
-              
-              <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="name">Your Name</label>
-                      <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                      <div class="validate"></div>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="name">Your Email</label>
-                      <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validate"></div>
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="name">Message</label>
-                    <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                    <div class="validate"></div>
-                  </div>
-                  <div class="mb-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-                  <div class="text-center"><button type="submit">Send Message</button></div>
-                </form>
-              </div>
-    
-            </div>
-    
-          </div>
-        </section>
+  <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Contact</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          
+          <label for="name">Your Name</label>
+          <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+          <div class="validate"></div>
+        </div>
+        <div class="md-form mb-5">
+          
+          <label for="name">Your Email</label>
+          <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+          <div class="validate"></div>
+        </div>
+
+        <div class="md-form mb-4">
+          
+          <label for="name">Message</label>
+          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+          <div class="validate"></div>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-primary">Submit</button>
       </div>
     </div>
-    
   </div>
+</div>
 
   <main id="main">
     <section>
@@ -152,7 +141,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a data-toggle="modal" data-target="#myModal" href="#contact">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a data-toggle="modal" data-target="#modalRegisterForm" href="#contact">Contact</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="fantom.html ">Fantom</a></li>
             </ul>
           </div>
