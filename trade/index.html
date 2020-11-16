@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script src="exchangeInfo.js"></script>
+</head>
+<body>
+<!--<select class="text-center" onChange="LoadCharts();" id="pairs">
+    <option value="FTMBTC">FTMBTC</option>
+</select>-->
+<div class="text-center">
+    <h1 style="color: #34626c; font-size: 25px;font-family:Verdana, Geneva, Tahoma, sans-serif">Click to see Trading View</h1>
+    <button class="btn btn-primary text-center" value="FTMBTC" onClick="LoadCharts();" id="pairs">FTMBTC</button>
+</div>
+
+<br>
+<div class="tradingview-widget-container" id="tvchart"></div>
+</body>
+<script>
+
+
+//PASS ALL THE SYMBOLS 
+var sym = exchangeInfo.symbols,markup='';
+sym.forEach(d => {
+    markup += '<option value="' + d.symbol + '">' + d.symbol + '</option>';
+});
+document.getElementById('pairs').innerHTML = markup;
+  
+LoadCharts();    
+function LoadCharts(){
+    let symbol = document.getElementById('pairs').value;
+    //RENDER CHART
+    new TradingView.widget(
+      {
+  "autosize": true,
+  "symbol": "BINANCE:" + symbol,
+  "interval": "5",
+  "timezone": "Asia/Kolkata",
+  "theme": "Light",
+  "style": "1",
+  "locale": "in",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "studies": [
+    "AwesomeOscillator@tv-basicstudies",
+    "MACD@tv-basicstudies",
+    "RSI@tv-basicstudies"
+  ],
+  "container_id": "tvchart"
+    });
+}
+    
+</script>
+</html>
