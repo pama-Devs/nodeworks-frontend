@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="script.js"></script>
 
 </head>
 
@@ -69,7 +70,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
+      <form class="modal-body mx-3" onsubmit="submitHandler(event)">
         <div class="md-form mb-5">
           
           <label for="name">Your Name</label>
@@ -86,14 +87,14 @@
         <div class="md-form mb-4">
           
           <label for="name">Message</label>
-          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+          <textarea class="form-control" id="message" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
           <div class="validate"></div>
         </div>
-
-      </div>
+        
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -124,8 +125,8 @@
           <div class="col-lg-6">
             <h4>Join Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <form method="post" onsubmit="subscribeNewsletter(event)">
+              <input type="email" id="subscribe" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
         </div>

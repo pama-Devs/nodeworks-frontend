@@ -33,6 +33,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="script.js"></script>
   <style>
         .ml5 {
           position: relative;
@@ -458,7 +459,7 @@
         <div class="row">
 
           <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form method="post" role="form" class="php-email-form" onsubmit="submitHandler(event)">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -474,14 +475,10 @@
               
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <textarea class="form-control" id="message" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
+              
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
@@ -501,8 +498,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <h4>Join Our Newsletter</h4>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <form onsubmit="subscribeNewsletter(event)">
+              <input type="email" id="subscribe" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
         </div>
